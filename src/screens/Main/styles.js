@@ -1,14 +1,16 @@
-import styled from 'styled-components';
-import {Text, View} from 'react-native';
+import styled from 'styled-components/native';
 
-export const Container = styled(View)`
-  background-color: black;
+export const Container = styled.View`
   height: 100%;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const MainText = styled(Text)`
-  align-self: center;
-  margin: 0 auto;
-  color: white;
+export const List = styled.View`
+  background-color: white;
+  height: 100%;
+`;
+
+export const Alert = styled.Text`
+  font-size: 30px;
 `;

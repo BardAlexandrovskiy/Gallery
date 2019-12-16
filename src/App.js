@@ -8,11 +8,29 @@
 
 import React from 'react';
 import MainScreen from './screens/Main';
+import store from './store/index';
+import {Provider} from 'react-redux';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import ViewPhotoScreen from './screens/ViewPhoto';
+
+const MainNavigator = createStackNavigator(
+  {
+    MainScreen: MainScreen,
+    ViewPhotoScreen: ViewPhotoScreen,
+  },
+  {
+    initialRouteName: 'MainScreen',
+  },
+);
+
+const AppNavigator = createAppContainer(MainNavigator);
+
 const App = () => {
   return (
-    <>
-      <MainScreen />
-    </>
+    <Provider store={store}>
+      <AppNavigator />
+    </Provider>
   );
 };
 
